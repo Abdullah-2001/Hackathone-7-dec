@@ -9,21 +9,21 @@ const OfferTimer2 = ({
     return (
         <div className='countdown-container'>
             <div style={{ display: "flex", flexDirection: "column" }}>
-                <div className='flex items-center'>
-                    <div className='day-container' style={{ backgroundColor: "white", width: "80px", height: "80px", borderRadius: "100%" }}>
-                        <p className=''>{days < 10 ? "0" + days : days}</p>
+                <div className='flex items-center gap-7'>
+                    <div className='flex justify-center items-center flex-col w-[90px] h-[90px] rounded-full bg-white'>
+                        <p className='text-[24px] font-bold m-0 p-0'>{days < 10 ? "0" + days : days}</p>
                         <p>DAYS</p>
                     </div>
-                    <div className='hour-container' style={{ backgroundColor: "white", width: "80px", height: "80px", borderRadius: "100%" }}>
-                        <p>{hours < 10 ? "0" + hours : hours}</p>
+                    <div className='flex justify-center items-center flex-col w-[90px] h-[90px] rounded-full bg-white'>
+                        <p className='text-[24px] font-bold m-0 p-0'>{hours < 10 ? "0" + hours : hours}</p>
                         <p>HOURS</p>
                     </div>
-                    <div className='min-container' style={{ backgroundColor: "white", width: "80px", height: "80px", borderRadius: "100%" }}>
-                        <p>{min < 10 ? "0" + min : min}</p>
+                    <div className='flex justify-center items-center flex-col w-[90px] h-[90px] rounded-full bg-white'>
+                        <p className='text-[24px] font-bold m-0 p-0'>{min < 10 ? "0" + min : min}</p>
                         <p>MINS</p>
                     </div>
-                    <div className='sec-container' style={{ backgroundColor: "white", width: "80px", height: "80px", borderRadius: "100%" }}>
-                        <p>{sec < 10 ? "0" + sec : sec}</p>
+                    <div className='flex justify-center items-center flex-col w-[90px] h-[90px] rounded-full bg-white'>
+                        <p className='text-[24px] font-bold m-0 p-0'>{sec < 10 ? "0" + sec : sec}</p>
                         <p>SEC</p>
                     </div>
                 </div>

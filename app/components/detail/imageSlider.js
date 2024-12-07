@@ -61,7 +61,7 @@ const ImageSlider = () => {
         {sliderImages?.map((img, i) => (
           <div key={img.id} onClick={() => handleSelectImage(img.id, i)}>
             <Image
-              width={400}
+              width={700}
               height={100}
               src={img.image}
               className={`cursor-pointer rounded-xl mb-4 transform transition duration-200 ease-in-out ${
@@ -129,7 +129,7 @@ const ImageSlider = () => {
                         )
                       }
                       src={img.image}
-                      className="slider-image w-[30rem] h-[50rem] object-contain"
+                      className="slider-image w-[100%] h-[50rem] object-contain"
                       alt="Slide Image"
                     />
                 </div>

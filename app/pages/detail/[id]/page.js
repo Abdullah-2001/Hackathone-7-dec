@@ -14,11 +14,11 @@ export default function Detail() {
     return (
         <div className='mt-[80px]'>
             <BreadCrumb />
-            <div className="grid grid-cols-12 gap-4 mt-[80px]">
-                <div className='col-span-12 lg:col-span-8'>
+            <div className="grid grid-cols-12 gap-20 mt-[80px]">
+                <div className='col-span-12 lg:col-span-7'>
                     <ImageSlider />
                 </div>
-                <div className='col-span-12 lg:col-span-4'>
+                <div className='col-span-12 lg:col-span-5'>
                     <div>
                         <p className='text-[24px] font-bold mb-[16px]'>Havic HV G-92 Gamepad</p>
                         <div className="flex mt-[8px] mb-[16px]">

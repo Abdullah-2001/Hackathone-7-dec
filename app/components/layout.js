@@ -1,64 +1,153 @@
+"use client"
+
 import Link from "next/link";
-import { BsCart, BsHeart } from "react-icons/bs";
+import { useRouter } from "next/navigation";
+import { BsCart, BsHeart, BsPerson } from "react-icons/bs";
 
 export default function Layout({ children }) {
+
+    const router = useRouter()
+
     return (
         <>
-            <header className="bg-white shadow-md px-10 py-4">
+            <header className="bg-white shadow-md px-5 md:px-10 py-4">
                 <div className="flex justify-between items-center">
+                    {/* Logo */}
                     <p className="text-[18px] font-bold">Exclusive</p>
-                    <ul className="list-none flex mb-0 p-0">
+
+                    {/* Hamburger Menu for Mobile */}
+                    <div className="md:hidden">
+                        <button
+                            id="menu-btn"
+                            aria-label="Open Menu"
+                            className="text-black focus:outline-none"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <ul className="hidden md:flex list-none mb-0 p-0">
                         <li>
                             <Link
                                 href="/pages/home"
-                                className="rounded-lg font-medium text-[18px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                                className="rounded-lg font-medium text-[16px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
                             >
                                 Home
                             </Link>
                         </li>
                         <li>
                             <Link
-                                href="/about"
-                                className="rounded-lg font-medium text-[18px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                                href="/pages/contact"
+                                className="rounded-lg font-medium text-[16px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
                             >
                                 Contact
                             </Link>
                         </li>
                         <li>
                             <Link
-                                href="/contact"
-                                className="rounded-lg font-medium text-[18px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                                href="/pages/about"
+                                className="rounded-lg font-medium text-[16px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
                             >
                                 About
                             </Link>
                         </li>
                         <li>
                             <Link
-                                href="/services"
-                                className="rounded-lg font-medium text-[18px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                                href="/pages/signup"
+                                className="rounded-lg font-medium text-[16px] mx-2 py-2.5 px-5 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
                             >
                                 Sign Up
                             </Link>
                         </li>
                     </ul>
-                    <div className="flex items-center">
-                        <div>
+
+                    {/* Search Bar and Icons */}
+                    <div className="hidden md:flex items-center">
+                        <div className="mr-5">
                             <input
                                 id="email"
                                 name="email"
                                 placeholder="What are you looking for?"
-                                className="block w-full rounded-md bg-[#F5F5F5] border-red-600 px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                className="block w-full rounded-md bg-[#F5F5F5] px-3 py-1.5 text-sm text-gray-900 border-0 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             />
                         </div>
-                        <div className="relative mx-5">
-                            <BsHeart size={25} className="cursor-pointer transition duration-500 hover:text-blue-600" />
+                        <div className="relative">
+                            <BsHeart
+                                size={25}
+                                className="cursor-pointer transition duration-500 hover:text-blue-600"
+                            />
+                        </div>
+                        <div className="mx-5">
+                            <BsCart
+                                onClick={() => router.push('/pages/cart')}
+                                size={25}
+                                className="cursor-pointer transition duration-500 hover:text-blue-600"
+                            />
                         </div>
                         <div>
-                            <BsCart size={25} className="cursor-pointer transition duration-500 hover:text-blue-600" />
+                            <BsPerson
+                                onClick={() => router.push('/pages/profile')}
+                                size={25}
+                                className="cursor-pointer transition duration-500 hover:text-blue-600"
+                            />
                         </div>
                     </div>
                 </div>
+
+                {/* Mobile Menu */}
+                <ul
+                    id="mobile-menu"
+                    className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg py-4 px-5 space-y-4 hidden"
+                >
+                    <li>
+                        <Link
+                            href="/pages/home"
+                            className="block rounded-lg font-medium text-[16px] py-2 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/about"
+                            className="block rounded-lg font-medium text-[16px] py-2 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                        >
+                            Contact
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/contact"
+                            className="block rounded-lg font-medium text-[16px] py-2 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                        >
+                            About
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/services"
+                            className="block rounded-lg font-medium text-[16px] py-2 transition duration-500 text-black hover:bg-blue-600 hover:text-white"
+                        >
+                            Sign Up
+                        </Link>
+                    </li>
+                </ul>
             </header>
+
             <div className="px-10">
                 {children}
             </div>

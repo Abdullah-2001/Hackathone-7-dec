@@ -21,6 +21,7 @@ import service3 from '../../../public/service3.svg';
 
 
 import Image from 'next/image';
+import { FiArrowRight, FiArrowUp } from 'react-icons/fi';
 
 export default function Home() {
 
@@ -215,23 +216,29 @@ export default function Home() {
         </div>
       </section>
 
-      <div className='mt-[140px] flex justify-around text-center items-center'>
-        <div className='flex flex-col items-center'>
-          <Image src={service2} alt="" />
-          <p className='text-[24px] font-bold mt-[24px]'>FREE AND FAST DELIVERY</p>
-          <p className='text-[18px]'>Free delivery for all orders over $140</p>
+      <div className='relative'>
+        <div className='mt-[140px] flex justify-around text-center items-center'>
+          <div className='flex flex-col items-center'>
+            <Image src={service2} alt="" />
+            <p className='text-[24px] font-bold mt-[24px]'>FREE AND FAST DELIVERY</p>
+            <p className='text-[18px]'>Free delivery for all orders over $140</p>
+          </div>
+          <div className='flex flex-col items-center'>
+            <Image src={service2} alt="" />
+            <p className='text-[24px] font-bold mt-[24px]'>FREE AND FAST DELIVERY</p>
+            <p className='text-[18px]'>Free delivery for all orders over $140</p>
+          </div>
+          <div className='flex flex-col items-center'>
+            <Image src={service3} alt="" />
+            <p className='text-[24px] font-bold mt-[24px]'>FREE AND FAST DELIVERY</p>
+            <p className='text-[18px]'>Free delivery for all orders over $140</p>
+          </div>
         </div>
-        <div className='flex flex-col items-center'>
-          <Image src={service2} alt="" />
-          <p className='text-[24px] font-bold mt-[24px]'>FREE AND FAST DELIVERY</p>
-          <p className='text-[18px]'>Free delivery for all orders over $140</p>
-        </div>
-        <div className='flex flex-col items-center'>
-          <Image src={service3} alt="" />
-          <p className='text-[24px] font-bold mt-[24px]'>FREE AND FAST DELIVERY</p>
-          <p className='text-[18px]'>Free delivery for all orders over $140</p>
+        <div onClick={scrollToTop} className='cursor-pointer w-[50px] h-[50px] bg-[#F5F5F5] rounded-full absolute right-0 top-60 flex justify-center items-center'>
+          <FiArrowUp size={30} />
         </div>
       </div>
+
 
     </div>
   );
