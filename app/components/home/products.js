@@ -86,7 +86,7 @@ function Products({ arrows }) {
             <Slider {...settings}>
                 {arr.map((v, i) => {
                     return (
-                        <div onClick={() => router.push("/pages/detail/1")}>
+                        <div onClick={() => router.push("/pages/detail/1")} key={i}>
                             <div>
                                 <div className="label">
                                     <p>-40%</p>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Slider from "react-slick";
-import { FiArrowLeft, FiArrowRight, FiPhone, FiMonitor, FiWatch, FiCamera, FiHeadphones, FiGamepad } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight, FiPhone, FiMonitor, FiWatch, FiCamera, FiHeadphones } from "react-icons/fi";
 
 const Categories = () => {
 
@@ -28,7 +28,7 @@ const Categories = () => {
         { title: "SmartWatch", Icon: <FiWatch /> },
         { title: "Camera", Icon: <FiCamera /> },
         { title: "HeadPhones", Icon: <FiHeadphones /> },
-        { title: "Gaming", Icon: <FiGamepad /> },
+        { title: "Gaming", Icon: <FiHeadphones /> },
     ];
 
     const settings = {
