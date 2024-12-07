@@ -33,9 +33,10 @@ function Accordion() {
                     >
                         {item.question}
                     </p>
-                    {activeIndex === index && item.subMenus.map((menu) => {
+                    {activeIndex === index && item.subMenus.map((menu, ind) => {
                         return (
                             <div
+                                key={ind}
                                 className={`hover:text-[#DB4444] hover:cursor-pointer pl-6 overflow-hidden text-sm text-slate-500 transition-all duration-300 ease-in-out ${activeIndex === index ? 'max-h-40' : 'max-h-0'
                                     }`}
                             >
